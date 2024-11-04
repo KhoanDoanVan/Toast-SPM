@@ -9,8 +9,8 @@ import Foundation
 import SwiftUI
 
 @available(iOS 13.0, *)
-struct ToastItem: Identifiable {
-    let id: UUID = .init()
+public struct ToastItem: Identifiable {
+    public let id: UUID = .init()
     var title: String
     var symbol: String?
     var tint: Color
@@ -18,7 +18,7 @@ struct ToastItem: Identifiable {
     var timing: ToastTime = .medium
 }
 
-enum ToastTime: CGFloat {
+public enum ToastTime: CGFloat {
     case short = 1.0
     case medium = 2.0
     case long = 3.5

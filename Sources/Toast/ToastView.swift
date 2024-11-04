@@ -4,7 +4,7 @@
 import SwiftUI
 
 @available(iOS 13.0, *)
-struct ToastView: View {
+public struct ToastView: View {
     
     var size: CGSize
     var item: ToastItem
@@ -13,7 +13,7 @@ struct ToastView: View {
     @State private var animateOut: Bool = false
     
     @available(iOS 13.0, *)
-    var body: some View {
+    public var body: some View {
         if #available(iOS 15.0, *) {
             if #available(iOS 16.0, *) {
                 HStack(spacing: 0) {
@@ -107,7 +107,7 @@ struct ToastView: View {
 
 @available(iOS 17.0, *)
 @Observable
-class Toast {
+public class Toast {
     @MainActor static let shared = Toast()
     fileprivate var toasts: [ToastItem] = []
     
