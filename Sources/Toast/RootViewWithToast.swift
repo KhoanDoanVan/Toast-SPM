@@ -13,6 +13,11 @@ public struct RootViewWithToast<Content: View>: View {
     /// View Properties
     @State public var overlayWindow: UIWindow?
     
+    // Public initializer
+    public init(content: () -> Content) {
+        self.content = content()
+    }
+    
     public var body: some View {
         content
             .onAppear {
