@@ -9,8 +9,8 @@ public struct ToastView: View {
     public var size: CGSize
     public var item: ToastItem
     
-    @State private var animateIn: Bool = false
-    @State private var animateOut: Bool = false
+    @State var animateIn: Bool = false
+    @State var animateOut: Bool = false
     
     @available(iOS 13.0, *)
     public var body: some View {
