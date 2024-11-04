@@ -11,12 +11,21 @@ import SwiftUI
 @available(iOS 13.0, *)
 public struct ToastItem: Identifiable {
     public let id: UUID = .init()
-    var title: String
-    var symbol: String?
-    var tint: Color
-    var isUserInteractionEnabled: Bool
-    var timing: ToastTime = .medium
+    public var title: String
+    public var symbol: String?
+    public var tint: Color
+    public var isUserInteractionEnabled: Bool
+    public var timing: ToastTime = .medium
+    
+    public init(title: String, symbol: String? = nil, tint: Color, isUserInteractionEnabled: Bool, timing: ToastTime = .medium) {
+        self.title = title
+        self.symbol = symbol
+        self.tint = tint
+        self.isUserInteractionEnabled = isUserInteractionEnabled
+        self.timing = timing
+    }
 }
+
 
 public enum ToastTime: CGFloat {
     case short = 1.0
