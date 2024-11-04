@@ -12,6 +12,12 @@ public struct ToastView: View {
     @State var animateIn: Bool = false
     @State var animateOut: Bool = false
     
+    // Public initializer
+    public init(size: CGSize, item: ToastItem) {
+        self.size = size
+        self.item = item
+    }
+    
     @available(iOS 13.0, *)
     public var body: some View {
         if #available(iOS 15.0, *) {
