@@ -77,11 +77,11 @@ public struct ToastView: View {
         }
     }
     
-    var offsetY: CGFloat {
+    public var offsetY: CGFloat {
         return 0
     }
     
-    func removeToast() {
+    public func removeToast() {
         guard !animateOut else { return }
         
         if #available(iOS 17.0, *) {
@@ -95,7 +95,7 @@ public struct ToastView: View {
         }
     }
     
-    func removeToastItem() {
+    public func removeToastItem() {
         if #available(iOS 17.0, *) {
             Toast.shared.toasts.removeAll(where: { $0.id == item.id })
         } else {
@@ -108,10 +108,10 @@ public struct ToastView: View {
 @available(iOS 17.0, *)
 @Observable
 public class Toast {
-    @MainActor static let shared = Toast()
-    fileprivate var toasts: [ToastItem] = []
+    @MainActor static public let shared = Toast()
+    public var toasts: [ToastItem] = []
     
-    func present(title: String, symbol: String?, tint: Color = .primary, isUserInteractionEnabled: Bool = false, timing: ToastTime = .medium) {
+    public func present(title: String, symbol: String?, tint: Color = .primary, isUserInteractionEnabled: Bool = false, timing: ToastTime = .medium) {
         
         withAnimation(.snappy) {
             toasts.append(.init(title: title, symbol: symbol, tint: tint, isUserInteractionEnabled: isUserInteractionEnabled, timing: timing))
